@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.FloatingActionButton
+        android:src="@drawable/ic_add_black_24dp"
+        app:fabSize="normal"
+        android:id="@+id/addWaypointBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#d32f2f"
+        app:elevation="20dp"
+        app:rippleColor="#4db6ac"/>
+    <android.support.design.widget.FloatingActionButton
+        android:src="@drawable/ic_reorder_black_24dp"
+        app:fabSize="normal"
+        android:id="@+id/moreDrone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="116dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#d32f2f"
+        app:elevation="20dp"
+        app:rippleColor="#4db6ac"
+        android:visibility="gone"/>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="io.navcom.djinavigation.auto_mapper"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/clear_btn"
+        android:backgroundTint="#4dd0e1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:elevation="20dp"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:backgroundTint="#00c853"
+        android:id="@+id/StartWaype"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:visibility="gone"
+        android:id="@+id/stopWaypoint"
+        android:backgroundTint="#b71c1c"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/addWaypointBtn" />
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:elevation="40dp"
+        android:layout_below="@+id/clear_btn"
+        android:layout_centerHorizontal="true"
+        android:background="#8326c6da"
+        android:visibility="gone"
+        android:id="@+id/relLayoutInfo">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPS: None"
+            android:textSize="32dp"
+            android:id="@+id/gpsOnline"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Altitude: 0ft"
+            android:id="@+id/atti"
+            android:textSize="32dp"
+            android:layout_below="@+id/gpsOnline"
+            android:layout_alignStart="@+id/gpsOnline" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Battery: 0%"
+            android:id="@+id/battery"
+            android:textSize="32dp"
+            android:layout_below="@+id/atti"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Route"
+            android:id="@+id/sfp"
+            android:elevation="40dp"
+            android:backgroundTint="#f0e45151"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="2"
+            android:text="3"
+            android:maxEms="2"
+            android:minEms="1"
+            android:id="@+id/alt_input_i"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
